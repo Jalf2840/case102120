@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111b22" />
+  <meta name="description" content="植木探偵事務所。記録だけが存在する人物を追う、CASE 1021。" />
+  <title>CASE 1021 | 植木探偵事務所</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header class="topbar">
+      <a href="./" class="brand" aria-label="CASE1021 トップ">
+        <span class="brand-mark" aria-hidden="true">U.</span>
+        <span class="brand-text"><strong>UEKI INVESTIGATION</strong><small>PRIVATE DETECTIVE OFFICE</small></span>
+      </a>
+      <div class="top-right">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="top-status">CASE FILE / <b>1021</b></span>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar" aria-label="捜査情報">
+        <div class="sidebar-top">
+          <span class="overline">INVESTIGATION FILE</span>
+          <div class="case-no">1021<span>.</span></div>
+          <p class="side-title">誰も見たことのない人物を<br>探してください。</p>
+          <div class="rule"></div>
+          <div class="side-meta"><span>担当探偵</span><strong>植木 誠</strong></div>
+          <div class="side-meta"><span>依頼人</span><strong>匿名</strong></div>
+          <div class="side-meta"><span>日付</span><strong>2026.10.21</strong></div>
+        </div>
+        <div class="sidebar-evidence" aria-label="収集した証拠">
+          <div class="sidebar-section-head">
+            <span class="sidebar-caption">COLLECTED EVIDENCE</span>
+            <span id="evidence-count" class="evidence-count">00</span>
+          </div>
+          <button type="button" id="mobile-evidence-toggle" class="mobile-evidence-toggle" aria-controls="evidence-list" aria-expanded="false">収集した証拠を開く <span aria-hidden="true">▾</span></button>
+          <div id="evidence-list" class="evidence-list" aria-label="閲覧できる資料"></div>
+          <p class="evidence-explainer">資料を選択すると、調査画面を移動せずに読み返せます。</p>
+        </div>
+        <div class="sidebar-history">
+          <details>
+            <summary>これまでの調査履歴</summary>
+            <div id="scene-history" class="scene-history"></div>
+          </details>
+        </div>
+        <div class="sidebar-bottom">
+          <span class="sidebar-caption">CASE STATUS</span>
+          <div id="sidebar-status" class="side-state">確認中</div>
+          <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+          <p class="side-note">記録は、必ずしも事実とは限らない。</p>
+        </div>
+      </aside>
+
+      <main id="app" class="main-panel" tabindex="-1" aria-live="polite">
+        <div class="loading"><span class="spinner"></span> 記録を読み込んでいます……</div>
+      </main>
+    </div>
+    <footer class="footer">
+      <span>UEKI PRIVATE INVESTIGATION OFFICE © 2026</span>
+      <button type="button" id="reset-button" class="text-button">調査記録を初期化</button>
+    </footer>
+  </div>
+  <div id="evidence-modal" class="evidence-modal" hidden>
+    <div class="evidence-overlay" data-close-evidence="true"></div>
+    <section class="evidence-dialog" role="dialog" aria-modal="true" aria-labelledby="evidence-modal-title" tabindex="-1">
+      <header class="evidence-dialog-header">
+        <div><span class="sidebar-caption">CASE 1021 / RECORD</span><h2 id="evidence-modal-title">証拠資料</h2></div>
+        <button type="button" id="evidence-close" class="evidence-close" data-close-evidence="true" aria-label="資料を閉じる">✕</button>
+      </header>
+      <div id="evidence-modal-content" class="evidence-modal-content"></div>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
